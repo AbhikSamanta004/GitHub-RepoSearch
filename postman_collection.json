@@ -1,0 +1,75 @@
+{
+	"info": {
+		"_postman_id": "a7b8c9d0-1234-5678-9abc-def012345678",
+		"name": "GitHub Repository Search API",
+		"description": "Postman Collection for Spring Boot GitHub Repository Search Application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Search GitHub Repositories",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"query\": \"spring boot\",\n  \"language\": \"Java\",\n  \"sort\": \"stars\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/github/search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"github",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Stored Repositories (Filtered)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/github/repositories?language=Java&minStars=100&sort=stars",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"github",
+						"repositories"
+					],
+					"query": [
+						{
+							"key": "language",
+							"value": "Java"
+						},
+						{
+							"key": "minStars",
+							"value": "100"
+						},
+						{
+							"key": "sort",
+							"value": "stars"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
